@@ -3,6 +3,7 @@ import 'owl.carousel/dist/assets/owl.carousel.css'
 import 'owl.carousel/dist/assets/owl.theme.default.css'
 import { useScriptTag } from '@vueuse/core'
 import { defineComponent } from 'vue'
+import 'jquery'
 
 export default defineComponent({
 	name: 'BglVCarousel',
