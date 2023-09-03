@@ -3,15 +3,17 @@
   "type": "module",
   "version": "0.0.3",
   "packageManager": "pnpm@8.7.0",
-  "description": "_description_",
+  "description": "Bagel Vue Owl Carousel",
   "license": "MIT",
   "keywords": [],
   "sideEffects": false,
   "exports": {
+    "./package.json": "./package.json",
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs"
-    }
+    },
+    "./dist/components": "./dist/components"
   },
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
@@ -28,6 +30,7 @@
     "dist"
   ],
   "scripts": {
+    "dev:app": "vite serve dev",
     "build": "unbuild",
     "dev": "unbuild --stub",
     "lint": "eslint .",
@@ -39,8 +42,9 @@
     "prepare": "simple-git-hooks"
   },
   "dependencies": {
-    "owl.carousel": "^2.3.4",
-    "vue": "2"
+    "@vueuse/core": "^10.4.1",
+    "jquery": "^3.7.1",
+    "owl.carousel": "^2.3.4"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.41.0",
@@ -48,6 +52,8 @@
     "@antfu/utils": "^0.7.6",
     "@types/jquery": "^3.5.17",
     "@types/node": "^20.5.7",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vue/tsconfig": "^0.4.0",
     "bumpp": "^9.2.0",
     "eslint": "^8.48.0",
     "esno": "^0.17.0",
@@ -59,7 +65,8 @@
     "typescript": "^5.2.2",
     "unbuild": "^2.0.0",
     "vite": "^4.4.9",
-    "vitest": "^0.34.3"
+    "vitest": "^0.34.3",
+    "vue": "^3.3.4"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
