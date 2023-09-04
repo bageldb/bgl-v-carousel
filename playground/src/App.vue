@@ -9,5 +9,4 @@ import { Carousel } from 'bgl-v-owl-carousel'
 		<img src="https://loremflickr.com/640/480">
 		<img src="https://loremflickr.com/640/480">
 	</Carousel>
-	<div />
 </template>

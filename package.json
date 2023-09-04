@@ -5,6 +5,10 @@
   "packageManager": "pnpm@8.7.0",
   "description": "Bagel Vue Owl Carousel",
   "license": "MIT",
+  "homepage": "https://github.com/nallon/v-carousel#readme",
+  "repository": {
+    "url": "https://github.com/nallon/v-carousel"
+  },
   "keywords": [],
   "sideEffects": false,
   "exports": {
