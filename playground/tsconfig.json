@@ -11,7 +11,8 @@
       "bgl-v-owl-carousel/raw/components": [
         "../../dist/components"
       ]
-    }
+    },
+    "esModuleInterop": true
   },
   "include": [
     "./**/*"
