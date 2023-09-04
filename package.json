@@ -39,7 +39,7 @@
     "components.d.ts"
   ],
   "scripts": {
-    "dev:app": "vite serve playgrounds/dev",
+    "dev:app": "vite serve playground",
     "build": "unbuild",
     "dev": "unbuild --stub",
     "lint": "eslint .",

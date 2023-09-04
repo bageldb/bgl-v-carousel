@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Carousel } from 'bgl-v-owl-carousel/raw'
+import { Carousel } from 'bgl-v-owl-carousel'
 </script>
 
 <template>

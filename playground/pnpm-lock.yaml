@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       bgl-v-owl-carousel:
-        specifier: ^0.0.8
-        version: 0.0.8(vue@3.3.4)
+        specifier: ^0.0.10
+        version: 0.0.10(vue@3.3.4)
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^0.41.0
@@ -885,8 +885,8 @@ packages:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
     dev: true
 
-  /bgl-v-owl-carousel@0.0.8(vue@3.3.4):
-    resolution: {integrity: sha512-WazN1/ssWshAqyFzkKPJGYWxhbAvFchVYenvBODXlf3j/RywxPiAteGdbzmEO2pC51Mz9pgn+KMrsxcefvNmMA==}
+  /bgl-v-owl-carousel@0.0.10(vue@3.3.4):
+    resolution: {integrity: sha512-doGMwUd3F1zx0NJN18xxioki6f3/JVl+tgnx44KZH1BAav0sI51tvDgYEu6hBzuvXHzOLEepVVn7mFY2Wr4Vbg==}
     dependencies:
       '@vueuse/core': 10.4.1(vue@3.3.4)
       jquery: 3.7.1
