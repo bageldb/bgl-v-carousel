@@ -7,8 +7,8 @@ export default defineConfig({
 	plugins: [vue()],
 	resolve: {
 		alias: {
-			'bgl-v-owl-carousel/raw': path.resolve(__dirname, '../../src'),
-			'bgl-v-owl-carousel/raw/components': path.resolve(__dirname, '../../src/components'),
+			'bgl-v-owl-carousel/raw': path.resolve(__dirname, '../../dist'),
+			'bgl-v-owl-carousel/raw/components': path.resolve(__dirname, '../../dist/components'),
 		},
 	},
 })

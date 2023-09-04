@@ -6,7 +6,10 @@
     ],
     "paths": {
       "bgl-v-owl-carousel/raw": [
-        "../../src"
+        "../../dist"
+      ],
+      "bgl-v-owl-carousel/raw/components": [
+        "../../dist/components"
       ]
     }
   },

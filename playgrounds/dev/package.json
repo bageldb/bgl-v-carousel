@@ -15,7 +15,7 @@
     "prepare": "simple-git-hooks"
   },
   "dependencies": {
-    "bgl-v-owl-carousel": "^0.0.8"
+    "bgl-v-owl-carousel": "^0.0.9"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.41.0",
