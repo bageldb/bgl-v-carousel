@@ -1,46 +1,10 @@
-# vue-sfc-unbuild
-
-Bundleless Vue 2/3 component library starter.
+# bgl-v-owl-carousel
 
 Features:
 
 - Build with [unbuild](https://github.com/unjs/unbuild)
 - File-to-file transpilation via [mkdist](https://github.com/unjs/mkdist)
 - Playground with [vite](https://vitejs.dev/)
-- Sample SFC to kick-start development
-
-## Generate a project
-
-Vue 3
-
-```bash
-npx degit wobsoriano/vue-sfc-unbuild library-name
-```
-
-Vue 2
-
-```bash
-npx degit wobsoriano/vue-sfc-unbuild#vue2 library-name
-```
-
-## Setup
-
-```bash
-# install dependencies
-npm install
-
-# start the dev app with hot reload, great for testing components
-npm run dev
-
-# build the library, available under dist
-npm run build
-
-# build the dev app, available under dev/dist
-npm run dev:build
-
-# preview the dev app locally from dev/dist
-npm run dev:preview
-```
 
 ## Usage
 
@@ -50,12 +14,12 @@ Install all components (as a plugin)
 // src/main.ts
 
 import { createApp } from 'vue';
-import MyLibrary from 'my-library';
+import BglVOwlCarousel from 'bgl-v-owl-carousel';
 
 import App from './App.vue';
 
 const app = createApp(App);
-app.use(MyLibrary);
+app.use(BglVOwlCarousel);
 app.mount('#app');
 ```
 
@@ -63,8 +27,27 @@ Import some components
 
 ```vue
 <script setup lang="ts">
-import { Button, Card } from 'my-library/components';
+import { Carousel } from 'bgl-v-owl-carousel';
 </script>
+```
+
+## Contributing
+
+```bash
+# install dependencies with pnpm recursively
+pnpm i -r -f
+
+# start the dev app with hot reload, great for testing components
+pnpm run dev:app
+
+# build the library, available under dist
+pnpm run build
+
+# build the dev app, available under dev/dist
+pnpm run dev:build
+
+# preview the dev app locally from dev/dist
+pnpm run dev:preview
 ```
 
 ## License
