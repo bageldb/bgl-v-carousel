@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { Carousel } from 'bgl-v-owl-carousel/components'
 </script>
 

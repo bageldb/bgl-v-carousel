@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 
 // Using import aliases in Vite
-// import MyLibrary from 'my-library'
+// import MyLibrary from 'bgl-v-owl-carousel'
 import App from './App.vue'
 
 const app = createApp(App)
