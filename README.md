@@ -8,7 +8,7 @@ Features:
 
 ## Usage
 
-Install all components (as a plugin)
+Use component globally
 
 ```ts
 // src/main.ts
@@ -23,7 +23,7 @@ app.use(BglVOwlCarousel);
 app.mount('#app');
 ```
 
-Import some components
+Import component
 
 ```vue
 <script setup lang="ts">
