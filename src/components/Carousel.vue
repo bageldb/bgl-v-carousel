@@ -38,20 +38,12 @@ export default defineComponent({
 			owl: null as any,
 		}
 	},
-	// async beforeCreate() {
-	// 	const jq = await import('jquery');
-	// 	(window as any).$ = jq.default
-	// },
-	beforeCreate() {
+	created() {
 		useScriptTag('https://code.jquery.com/jquery-3.5.1.min.js', async () => {
 			await this.setOwlInstance()
 			this.addListeners()
 		})
 	},
-	// async mounted() {
-	// 	await this.setOwlInstance()
-	// 	this.addListeners()
-	// },
 	methods: {
 		async setOwlInstance() {
 			// @ts-expect-error it doesn't work without this

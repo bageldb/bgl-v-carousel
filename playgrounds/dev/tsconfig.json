@@ -3,12 +3,12 @@
   "compilerOptions": {
     "types": [
       "vite/client"
-    ]
-    // "paths": {
-    // 	"my-library": [
-    // 		"../src"
-    // 	]
-    // }
+    ],
+    "paths": {
+      "bgl-v-owl-carousel/raw": [
+        "../../src"
+      ]
+    }
   },
   "include": [
     "./**/*"

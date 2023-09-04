@@ -9,4 +9,5 @@ const install: Plugin = {
 	},
 }
 
+export * from './components'
 export default install
