@@ -1,7 +1,7 @@
 {
   "name": "bgl-v-owl-carousel",
   "type": "module",
-  "version": "0.0.19-beta.3",
+  "version": "0.0.19-beta.4",
   "packageManager": "pnpm@8.7.0",
   "description": "Bagel Vue Owl Carousel",
   "license": "MIT",
