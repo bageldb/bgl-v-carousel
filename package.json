@@ -1,7 +1,7 @@
 {
   "name": "bgl-v-owl-carousel",
   "type": "module",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "packageManager": "pnpm@8.7.0",
   "description": "Bagel Vue Owl Carousel",
   "license": "MIT",
@@ -54,6 +54,9 @@
     "typecheck": "tsc --noEmit",
     "prepare": "simple-git-hooks"
   },
+  "peerDependencies": {
+    "vue": "^3.3.4"
+  },
   "dependencies": {
     "@vueuse/core": "^10.4.1",
     "jquery": "^3.7.1",
@@ -78,8 +81,7 @@
     "typescript": "^5.2.2",
     "unbuild": "^2.0.0",
     "vite": "^4.4.9",
-    "vitest": "^0.34.3",
-    "vue": "^3.3.4"
+    "vitest": "^0.34.3"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
