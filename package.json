@@ -1,7 +1,7 @@
 {
   "name": "bgl-v-owl-carousel",
   "type": "module",
-  "version": "0.0.34",
+  "version": "0.0.35",
   "description": "Bagel Vue Owl Carousel",
   "license": "MIT",
   "homepage": "https://github.com/nallon/v-carousel#readme",
@@ -11,7 +11,7 @@
   "keywords": [],
   "sideEffects": false,
   "exports": {
-    "./*": "./*",
+    "./*": "./dist/*",
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
