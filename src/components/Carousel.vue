@@ -1,9 +1,9 @@
 <script lang="ts">
-import 'owl.carousel/dist/assets/owl.carousel.css'
-import 'owl.carousel/dist/assets/owl.theme.default.css'
 import { useScriptTag } from '@vueuse/core'
 import { defineComponent } from 'vue'
 import 'jquery'
+import '../assets/owl.carousel.css'
+import '../assets/owl.theme.default.css'
 
 export default defineComponent({
 	name: 'BglVCarousel',
@@ -28,35 +28,68 @@ export default defineComponent({
 		autoplayHoverPause: { default: false, type: Boolean },
 		rtl: { default: false, type: Boolean },
 		responsive: { default: () => ({}), type: Object },
+		navSpeed: { default: false, type: [Number, Boolean] },
+
+		currentSlideIndex: { default: 0, type: Number },
 	},
-	emits: ['change'],
+	emits: ['change', 'update:currentSlideIndex', 'owlReady'],
 	data() {
 		return {
-			prevHandler: `carousel_prev_${Math.random().toString(36).substring(2, 15)}${Math.random().toString(36).substring(2, 15)}`,
-			elementHandle: `carousel_${Math.random().toString(36).substring(2, 15)}${Math.random().toString(36).substring(2, 15)}`,
-			nextHandler: `carousel_next_${Math.random().toString(36).substring(2, 15)}${Math.random().toString(36).substring(2, 15)}`,
+			elementHandleRef: null as HTMLElement | null,
+			prevHandlerRef: null as HTMLElement | null,
+			nextHandlerRef: null as HTMLElement | null,
 			owl: null as any,
+
 		}
 	},
-	created() {
-		useScriptTag('https://code.jquery.com/jquery-3.5.1.min.js', async () => {
-			await this.setOwlInstance()
-			this.addListeners()
-		})
+	// watch: {
+	// currentSlideIndex(newValue, oldValue) {
+	// 	if (newValue !== oldValue)
+	// 		this.slideIntoView(newValue)
+	// },
+	// },
+
+	async mounted() {
+		const { load: loadJQ, unload: unloadJQ } = useScriptTag('https://code.jquery.com/jquery-3.7.1.slim.min.js', async (scriptTag) => {
+			console.debug('jquery loaded', { $, scriptTag });
+		},
+			{
+				manual: true,
+				async: false,
+				crossOrigin: 'anonymous',
+			},
+		)
+		const { load: loadOwl, unload: unloadOwl } = useScriptTag('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', async (scriptTag) => {
+			console.debug('owl loaded', { scriptTag });
+		},
+			{
+				manual: true,
+				async: false,
+				crossOrigin: 'anonymous',
+			},
+		)
+
+		unloadJQ()
+		unloadOwl()
+		await loadJQ()
+		await loadOwl()
+		await this.init()
 	},
 	methods: {
+		async init() {
+			await this.setOwlInstance()
+			this.addListeners()
+			this.$emit('owlReady')
+		},
 		async setOwlInstance() {
-			// @ts-expect-error it doesn't work without this
-			await import('owl.carousel')
-
-			this.owl = ($(`#${this.elementHandle}`) as any).owlCarousel({
+			this.owl = ($(this.$refs.elementHandleRef as HTMLElement) as any).owlCarousel({
 				items: this.items,
 				margin: this.margin,
 				loop: this.loop,
 				center: this.center,
 				nav: this.nav,
 				autoplay: this.autoplay,
-				autoplaySpeed: this.autoplaySpeed,
+				autoplayNavSpeed: this.autoplaySpeed,
 				rewind: this.rewind,
 				mouseDrag: this.mouseDrag,
 				touchDrag: this.touchDrag,
@@ -70,22 +103,55 @@ export default defineComponent({
 				autoplayHoverPause: this.autoplayHoverPause,
 				rtl: this.rtl,
 				responsive: this.responsive,
+				navSpeed: this.navSpeed,
 			})
 		},
 		addListeners() {
-			$(`#${this.prevHandler}`).click(() => {
-				this?.owl?.trigger?.('prev.owl.carousel')
+			$(this.$refs.prevHandlerRef as HTMLElement).on('click', () => {
+				this.owl.trigger('prev.owl.carousel')
 			})
 
-			$(`#${this.nextHandler}`).click(() => {
+			$(this.$refs.nextHandlerRef as HTMLElement).on('click', () => {
 				this.owl.trigger('next.owl.carousel')
 			})
 
-			this.owl.on('changed.owl.carousel', this.onChange)
+			this.owl.on('change.owl.carousel', this.onChange)
+			this.owl.on('changed.owl.carousel', this.onChanged)
+			this.owl.on('next.owl.carousel', this.onNext)
+			this.owl.on('prev.owl.carousel', this.onPrev)
+			this.owl.on('to.owl.carousel', this.onTo)
 		},
 		onChange(e: any) {
-			this.$emit('change', e)
+			// console.log({ ...e });
 		},
+		onChanged(e: any) {
+			this.$emit('change', e)
+			this.$emit('update:currentSlideIndex', e.item.index)
+		},
+		onNext(e: any) {
+			// console.debug({ e });
+		},
+		onPrev(e: any) {
+			// console.debug({ e });
+		},
+		onTo(e: any) {
+			// console.debug({ ...e });
+		},
+		triggerNext(navSpeed?: number) {
+			// const _navSpeed = [navSpeed !== undefined ? navSpeed : this.navSpeed]
+			this.owl.trigger('next.owl.carousel')
+		},
+		triggerPrev(navSpeed?: number) {
+			// const _navSpeed = [navSpeed !== undefined ? navSpeed : this.navSpeed]
+			this.owl.trigger('prev.owl.carousel')
+		},
+		triggerRefresh() {
+			this.owl.trigger('refresh.owl.carousel');
+		},
+		slideIntoView(index: number, navSpeed?: number) {
+			this.owl?.trigger('to.owl.carousel', [index, navSpeed || this.navSpeed]);
+		},
+
 	},
 })
 </script>
@@ -93,15 +159,15 @@ export default defineComponent({
 <template>
 	<div class="sh-v-owl-carousel">
 		<div
-			:id="elementHandle"
+			ref="elementHandleRef"
 			class="owl-carousel owl-theme"
 		>
 			<slot />
 		</div>
-		<span :id="prevHandler">
+		<span ref="prevHandlerRef">
 			<slot name="prev" />
 		</span>
-		<span :id="nextHandler">
+		<span ref="nextHandlerRef">
 			<slot name="next" />
 		</span>
 	</div>

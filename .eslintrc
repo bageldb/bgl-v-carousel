@@ -4,7 +4,7 @@
 		"no-console": "warn",
 		"no-tabs": "off",
 		"@typescript-eslint/indent": [
-			"warn",
+			0,
 			"tab"
 		],
 		"vue/html-indent": [
