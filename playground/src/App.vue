@@ -6,10 +6,10 @@ const carousel = ref<typeof Carousel | null>(null)
 const numSlides = ref(10)
 const currentSlideIndex = ref(0)
 function onChange(e: any) {
-	// console.log(e)
+  // console.log(e)
 }
 setTimeout(() => {
-	carousel.value?.slideIntoView(5)
+  carousel.value?.slideIntoView(5)
 }, 400);
 </script>
 

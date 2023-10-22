@@ -1,39 +1,38 @@
 {
-  "name": "bgl-v-owl-carousel",
-  "type": "module",
-  "packageManager": "pnpm@8.7.0",
-  "description": "Bagel Vue Owl Carousel",
-  "license": "MIT",
-  "keywords": [],
-  "sideEffects": false,
-  "scripts": {
-    "dev": "vite serve dev",
-    "lint": "eslint .",
-    "start": "esno src/index.ts",
-    "test": "vitest",
-    "typecheck": "tsc --noEmit",
-    "prepare": "simple-git-hooks"
-  },
-  "dependencies": {
-    "bgl-v-owl-carousel": "^0.0.11"
-  },
-  "devDependencies": {
-    "@antfu/eslint-config": "^0.41.0",
-    "@antfu/ni": "^0.21.6",
-    "@antfu/utils": "^0.7.6",
-    "@types/node": "^20.5.7",
-    "@vitejs/plugin-vue": "^4.2.3",
-    "@vue/tsconfig": "^0.4.0",
-    "lint-staged": "^14.0.1",
-    "simple-git-hooks": "^2.9.0",
-    "typescript": "^5.2.2",
-    "vite": "^4.4.9",
-    "vue": "^3.3.4"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged"
-  },
-  "lint-staged": {
-    "*": "eslint --fix"
-  }
+	"name": "bgl-v-owl-carousel",
+	"type": "module",
+	"description": "Bagel Vue Owl Carousel",
+	"license": "MIT",
+	"keywords": [],
+	"sideEffects": false,
+	"scripts": {
+		"dev": "vite serve dev",
+		"lint": "eslint .",
+		"start": "esno src/index.ts",
+		"test": "vitest",
+		"typecheck": "tsc --noEmit",
+		"prepare": "simple-git-hooks"
+	},
+	"dependencies": {
+		"bgl-v-owl-carousel": "file:../dist"
+	},
+	"devDependencies": {
+		"@antfu/eslint-config": "^0.43.1",
+		"@antfu/ni": "^0.21.8",
+		"@antfu/utils": "^0.7.6",
+		"@types/node": "^20.8.7",
+		"@vitejs/plugin-vue": "^4.4.0",
+		"@vue/tsconfig": "^0.4.0",
+		"lint-staged": "^15.0.2",
+		"simple-git-hooks": "^2.9.0",
+		"typescript": "^5.2.2",
+		"vite": "^4.5.0",
+		"vue": "^3.3.6"
+	},
+	"simple-git-hooks": {
+		"pre-commit": "pnpm lint-staged"
+	},
+	"lint-staged": {
+		"*": "eslint --fix"
+	}
 }

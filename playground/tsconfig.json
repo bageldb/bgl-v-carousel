@@ -1,20 +1,23 @@
 {
-  "extends": "../tsconfig.json",
-  "compilerOptions": {
-    "types": [
-      "vite/client"
-    ],
-    "paths": {
-      "bgl-v-owl-carousel/raw": [
-        "../../dist"
-      ],
-      "bgl-v-owl-carousel/raw/components": [
-        "../../dist/components"
-      ]
-    },
-    "esModuleInterop": true
-  },
-  "include": [
-    "./**/*"
-  ]
+	"extends": "../tsconfig.json",
+	"compilerOptions": {
+		"types": [
+			"vite/client"
+		],
+		"paths": {
+			"bgl-v-owl-carousel": [
+				"../../dist"
+			],
+			"bgl-v-owl-carousel/raw": [
+				"../../dist"
+			],
+			"bgl-v-owl-carousel/raw/components": [
+				"../../dist/components"
+			]
+		},
+		"esModuleInterop": true
+	},
+	"include": [
+		"./**/*"
+	]
 }

@@ -11,6 +11,7 @@
 			"warn",
 			"tab"
 		],
-		"@typescript-eslint/semi": "off"
+		"@typescript-eslint/semi": "off",
+		"@stylistic/js/no-tabs": "off"
 	}
 }
