@@ -30,6 +30,8 @@ export default defineComponent({
 		responsive: { default: () => ({}), type: Object },
 		navSpeed: { default: false, type: [Number, Boolean] },
 
+		extraOwlProps: { default: () => ({}), type: Object },
+
 		currentSlideIndex: { default: 0, type: Number },
 	},
 	emits: ['change', 'update:currentSlideIndex', 'owlReady'],
@@ -104,6 +106,8 @@ export default defineComponent({
 				rtl: this.rtl,
 				responsive: this.responsive,
 				navSpeed: this.navSpeed,
+
+				...this.extraOwlProps,
 			})
 		},
 		addListeners() {
