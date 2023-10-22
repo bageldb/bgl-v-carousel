@@ -1,8 +1,7 @@
 {
   "name": "bgl-v-owl-carousel",
   "type": "module",
-  "version": "0.0.31",
-  "packageManager": "pnpm@8.7.0",
+  "version": "0.0.32",
   "description": "Bagel Vue Owl Carousel",
   "license": "MIT",
   "homepage": "https://github.com/nallon/v-carousel#readme",
@@ -55,33 +54,32 @@
     "prepare": "simple-git-hooks"
   },
   "dependencies": {
-    "-": "^0.0.1",
-    "@vueuse/core": "^10.4.1",
+    "@vueuse/core": "^10.5.0",
     "jquery": "^3.7.1",
     "owl.carousel": "^2.3.4"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.41.0",
-    "@antfu/ni": "^0.21.6",
+    "@antfu/eslint-config": "^0.43.1",
+    "@antfu/ni": "^0.21.8",
     "@antfu/utils": "^0.7.6",
-    "@types/jquery": "^3.5.17",
-    "@types/node": "^20.5.7",
-    "@vitejs/plugin-vue": "^4.2.3",
+    "@types/jquery": "^3.5.24",
+    "@types/node": "^20.8.7",
+    "@vitejs/plugin-vue": "^4.4.0",
     "@vue/tsconfig": "^0.4.0",
     "bumpp": "^9.2.0",
-    "eslint": "^8.48.0",
+    "eslint": "^8.52.0",
     "eslint-plugin-import": "^2.28.1",
     "esno": "^0.17.0",
-    "lint-staged": "^14.0.1",
-    "pnpm": "^8.7.0",
-    "rimraf": "^5.0.1",
+    "lint-staged": "^15.0.2",
+    "pnpm": "^8.9.2",
+    "rimraf": "^5.0.5",
     "sh-v-owl-carousel": "^1.0.5",
     "simple-git-hooks": "^2.9.0",
     "typescript": "^5.2.2",
     "unbuild": "^2.0.0",
-    "vite": "^4.4.9",
-    "vitest": "^0.34.3",
-    "vue": "^3.3.4"
+    "vite": "^4.5.0",
+    "vitest": "^0.34.6",
+    "vue": "^3.3.6"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
