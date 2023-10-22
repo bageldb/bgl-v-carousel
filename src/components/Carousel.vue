@@ -26,6 +26,10 @@ export default defineComponent({
 		dots: { default: true, type: Boolean },
 		autoplayTimeout: { default: 5000, type: Number },
 		autoplayHoverPause: { default: false, type: Boolean },
+		// eslint-disable-next-line vue/prop-name-casing
+		URLhashListener: { default: false, type: Boolean },
+		animateOut: { default: '', type: String },
+
 		rtl: { default: false, type: Boolean },
 		responsive: { default: () => ({}), type: Object },
 		navSpeed: { default: false, type: [Number, Boolean] },
@@ -103,6 +107,8 @@ export default defineComponent({
 				dots: this.dots,
 				autoplayTimeout: this.autoplayTimeout,
 				autoplayHoverPause: this.autoplayHoverPause,
+				animateOut: this.animateOut,
+				URLhashListener: this.URLhashListener,
 				rtl: this.rtl,
 				responsive: this.responsive,
 				navSpeed: this.navSpeed,
